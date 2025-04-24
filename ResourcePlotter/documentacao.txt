@@ -1,0 +1,87 @@
+Monitor de recursos ploter 
+
+O projeto cosinste em fazer um programa, que monitore os recursos de uma ploter de impressão, recursos como:
+
+•Quantidade de tinta restante
+•Tempo de impressão restante
+• aviso que lembrará de verificar a tinta e a cabeça de impressão a cada quantidade de metros de material impresso 
+•E recursos de monitoramento do programa da ploter 
+
+O projeto também contará com câmeras (webcams) para monitorar recursos físicos, como a quantidade de tinta e a cabeça da ploter.
+
+Alguns desafios serão fazer a integração do programa da ploter com o programa de monitoramento.
+
+
+
+
+
+# Projeto: Monitor de Recursos para Plotter
+
+## Arquitetura do Sistema
+
+1. *Módulo de Comunicação com a Plotter*:
+   - Interface com o software da plotter (API, leitura de arquivos de log, comunicação serial)
+   - Coleta dados como tempo restante, metros impressos, etc.
+
+2. *Módulo de Visão Computacional*:
+   - Processamento de imagens das webcams
+   - Detecção de níveis de tinta
+   - Monitoramento da cabeça de impressão
+
+3. *Módulo de Notificações*:
+   - Alertas baseados em condições (tinta baixa, manutenção necessária)
+   - Lembretes periódicos
+
+4. *Interface do Usuário*:
+   - Dashboard com status atual
+   - Histórico e relatórios
+   - Configurações
+
+
+## Como Começar
+
+1. *Pesquisa e Análise*:
+   - Documente o modelo exato da sua plotter
+   - Investigue como seu software atual exporta dados (logs, APIs, etc.)
+   - Teste como as webcams podem ser posicionadas para melhor captura
+
+2. *Protótipo Mínimo (MVP)*:
+   - Comece com um script Python que:
+     - Consiga ler algum dado básico da plotter (talvez do arquivo de log)
+     - Capture imagens da webcam
+     - Mostre um alerta simples no console
+
+3. *Desenvolvimento Iterativo*:
+   - Implemente um recurso de cada vez
+   - Primeiro foco na coleta de dados básicos
+   - Depois adicione o processamento de imagens
+   - Por último, refine a interface
+
+## Bibliotecas Úteis (Python)
+
+- OpenCV - Para processamento de imagens das webcams
+- PySerial - Para comunicação serial com a plotter
+- Pillow - Manipulação de imagens
+- PyQt/Tkinter - Para interface gráfica
+- pandas - Para armazenamento e análise de dados
+
+## Desafios e Soluções
+
+1. *Integração com o software da plotter*:
+   - Solução: Verifique se o fabricante oferece API ou SDK
+   - Alternativa: Analisar arquivos de log ou comunicação serial
+
+2. *Detecção precisa de níveis de tinta via câmera*:
+   - Solução: Use marcadores visuais ou recipientes transparentes
+   - Machine learning para melhorar a detecção ao longo do tempo
+
+3. *Tempo real x Performance*:
+   - Solução: Multithreading para não bloquear a UI durante processamento
+
+## Próximos Passos
+
+1. Escolha um ambiente de desenvolvimento (VS Code + Python é uma boa combinação)
+2. Instale as bibliotecas básicas (pip install opencv-python numpy)
+3. Comece com um teste simples de captura de webcam e leitura de algum arquivo de log da plotter
+4. Documente cada etapa conforme avança
+5.
